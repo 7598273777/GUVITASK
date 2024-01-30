@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class FindSmallest {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter three numbers
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter the third number: ");
+        int num3 = scanner.nextInt();
+
+        // Close the Scanner to prevent resource leak
+        scanner.close();
+
+        // Call the findSmallest method to determine and print the smallest number
+        int smallest = findSmallest(num1, num2, num3);
+        System.out.println("The smallest number among " + num1 + ", " + num2 + ", and " + num3 + " is: " + smallest);
+    }
+
+    // Method to find the smallest among three numbers
+    private static int findSmallest(int a, int b, int c) {
+        return Math.min(Math.min(a, b), c);
+    }
+}
