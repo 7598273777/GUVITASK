@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class PurchaseDiscount {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the purchase amount
+        System.out.print("Enter the purchase amount: ");
+        double purchaseAmount = scanner.nextDouble();
+
+        // Close the Scanner to prevent resource leak
+        scanner.close();
+
+        // Calculate the final payable amount based on discount rules
+        double finalAmount = calculateFinalAmount(purchaseAmount);
+
+        // Print the final payable amount
+        System.out.println("Final Payable Amount: $" + finalAmount);
+    }
+    // Method to calculate the final payable amount based on discount rules
+    private static double calculateFinalAmount(double amount) {
+        if (amount < 500) {
+            // No discount applied
+            return amount;
+        } else if (amount >= 500 && amount <= 1000) {
+            // 10% discount applied
+            return amount - (0.10 * amount);
+        } else {
+            // 20% discount applied
+            return amount - (0.20 * amount);
+        }
+    }
+}
