@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Printnumbers {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter a number: ");
+
+        // Read the user input as an integer
+        int userInput = scanner.nextInt();
+
+        // Close the Scanner to prevent resource leak
+        scanner.close();
+
+        // Print numbers from 20 to the entered value
+        if (userInput >= 10 && userInput <= 50) {
+            for (int i = 10; i <= userInput; i++) {
+                System.out.println(i);
+            }
+        } else {
+            System.out.println("Please enter a number between 10 and 50 inclusive.");
+        }
+    }
+}
