@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class CheckNumber {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter a number: ");
+
+        // Read the user input as a double (assuming the input can be a decimal)
+        double userInput = scanner.nextDouble();
+
+        // Close the Scanner to prevent resource leak
+        scanner.close();
+
+        // Check if the entered number is negative, positive, or zero
+        if (userInput < 0) {
+            System.out.println("The entered number is negative.");
+        } else if (userInput > 0) {
+            System.out.println("The entered number is positive.");
+        } else {
+            System.out.println("The entered number is zero.");
+        }
+    }
+}
+
+
